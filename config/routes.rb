@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   
   get "users/:id" => 'users#show'
   
+  get "users/:id/edit" => 'users#edit'
+  
   
   
   
