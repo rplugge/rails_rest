@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
   
+  # get "users"
   def index
     @users = User.all
   end
   
+  # get "users/new"
   def new
   end
   
