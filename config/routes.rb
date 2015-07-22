@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
   
-  get "users/index" => 'users#index'
-  
-  get "users/:id/edit" => 'users#edit'
-  
-  delete "users" => 'users#delete'
+  get "users" => 'users#index'
   
   get "users/new" => 'users#new'
   
   post "users" => 'users#create'
+  
+  get "users/:id/edit" => 'users#edit'
+  
+  delete "users" => 'users#delete'
   
   get "users/:id" => 'users#show'
   

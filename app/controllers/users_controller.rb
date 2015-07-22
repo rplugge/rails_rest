@@ -5,11 +5,15 @@ class UsersController < ApplicationController
   end
   
   def new
-    @user = User.new
   end
   
   def create
+    user_password = BCrypt::Password.create(params[:password])
     
+    @user = User.create({name: params[:name], email: params[:email], password: user_password})
+    
+    redirect_to "users/#{@user.id}"
+
   end
   
   def show
@@ -21,9 +25,10 @@ class UsersController < ApplicationController
   end
   
   def delete
-    @user = User.find(params[:id])
+    binding.pry
+    @user = User.find(params["id"])
     @user.delete
     
-    redirect_t "/users/index"
+    redirect_to "/users/index"
   end
 end
