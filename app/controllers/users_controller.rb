@@ -13,7 +13,6 @@ class UsersController < ApplicationController
     @user = User.create({name: params[:name], email: params[:email], password: user_password})
     
     redirect_to "users/#{@user.id}"
-
   end
   
   def show
@@ -24,11 +23,21 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
   
+  def update
+    
+    @user = User.find(params[:id])
+    @user.name = params[:name]
+    @user.email = params[:email]
+  
+    @user.save
+  
+    redirect_to "users/#{@user.id}"
+  end
+  
   def delete
-    binding.pry
     @user = User.find(params["id"])
     @user.delete
     
-    redirect_to "/users/index"
+    redirect_to "/users"
   end
 end

@@ -1,18 +1,18 @@
 Rails.application.routes.draw do
   
-  get "users" => 'users#index'
+  get "users" => 'users#index' #List of all users
   
-  get "users/new" => 'users#new'
+  get "users/new" => 'users#new' #form for new user
   
-  post "users" => 'users#create'
+  post "users" => 'users#create' #creates new user, redirects to users/:id
   
-  get "users/:id/edit" => 'users#edit'
+  get "users/:id" => 'users#show' #user profile
   
-  delete "users" => 'users#delete'
+  get "users/:id/edit" => 'users#edit'  #form for edit user
   
-  get "users/:id" => 'users#show'
-  
-  
+  put "users/:id" => 'users#update' #updates user
+   
+  delete "users/:id" => 'users#delete'  #destroy
   
   
   

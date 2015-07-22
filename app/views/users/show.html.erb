@@ -10,7 +10,7 @@ This is where user info goes.
 
 <%= form_tag('/users', method:"delete") do%> 
   <input type="hidden" name="id" value="<%= @user.id %>">
-  <input type="submit" value="delete profile">
+  <input type="submit" value="Delete Profile">
 <% end %>
 
 <p><a href = "/users/<%= @user.id %>/stories/new"> Add a story </a></p>
